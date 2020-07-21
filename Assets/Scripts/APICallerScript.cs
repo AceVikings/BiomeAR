@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -17,7 +18,8 @@ public class APICallerScript : MonoBehaviour
     private string lng;
 
     public Slider aqiSlider;
-    
+
+    public Text text;
     // Start is called before the first frame update
     void Start()
     {
@@ -85,7 +87,11 @@ public class APICallerScript : MonoBehaviour
             aqiSlider.fillRect.GetComponent<Image>().color = new Color(0.5f,0f,0f,1);
         }
         
-
-    }
     
+    }
+
+    private void Update()
+    {
+        text.text = Input.touchCount.ToString();
+    }
 }
