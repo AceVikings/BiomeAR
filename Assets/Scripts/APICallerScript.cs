@@ -18,7 +18,7 @@ public class APICallerScript : MonoBehaviour
     private string lng;
 
     public Slider aqiSlider;
-
+    public static float AQIndex;
     public Text text;
     // Start is called before the first frame update
     void Start()
@@ -61,7 +61,7 @@ public class APICallerScript : MonoBehaviour
         Debug.Log(info["data"][0]["aqi"]);
 
         aqiSlider.value = info["data"][0]["aqi"].AsFloat/500f;
-        
+        AQIndex = aqiSlider.value;
         if (aqiSlider.value < (float)50/500)
         {
             aqiSlider.fillRect.GetComponent<Image>().color = Color.green;

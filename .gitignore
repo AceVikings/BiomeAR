@@ -64,3 +64,5 @@ Assets/PlayServices
 Assets/Editor Default Resources
 Assets/Plugins
 Assets/RestClient
+Assets/google-services.json
+Assets/*.meta
