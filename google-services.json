@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "998522783568",
+    "firebase_url": "https://biomear-7b152.firebaseio.com",
+    "project_id": "biomear-7b152",
+    "storage_bucket": "biomear-7b152.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:998522783568:android:1f52413a69d7eb473ece55",
+        "android_client_info": {
+          "package_name": "com.skyproductions.biomear"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "998522783568-sv0br3em20iacvse0kqm3mgolqik3bu4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCN8xvGMWvgQhHebfLGTyl091Tl9H_zu6c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "998522783568-sv0br3em20iacvse0kqm3mgolqik3bu4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

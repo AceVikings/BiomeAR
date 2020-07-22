@@ -1,18 +1,52 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿using UnityEngine;
+using Firebase.Auth;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class LoginController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static bool LoggedIn = false;
+    public InputField emailInput, passwordInput;
+    public GameObject authPanel, registrationPanel;
+    
+    public void Login()
     {
-        
+        FirebaseAuth.DefaultInstance.SignInWithEmailAndPasswordAsync(emailInput.text,
+            passwordInput.text).ContinueWith((task =>
+        {
+            if (task.IsCanceled)
+            {
+                Firebase.FirebaseException e =
+                    task.Exception.Flatten().InnerExceptions[0] as Firebase.FirebaseException;
+                GetErrorMessage((AuthError)e.ErrorCode);
+                return;
+            }
+            if (task.IsFaulted)
+            {
+                Firebase.FirebaseException e =
+                    task.Exception.Flatten().InnerExceptions[0] as Firebase.FirebaseException;
+                GetErrorMessage((AuthError)e.ErrorCode);
+                return;
+            }
+
+            if (!task.IsCompleted) return;
+            LoggedIn = true;
+                
+                
+        }));
+        SceneManager.LoadScene("GameScene");
+    }
+    void GetErrorMessage(AuthError errorCode)
+    {
+        string msg = "";
+        msg = errorCode.ToString();
+        print(msg);
     }
 
-    // Update is called once per frame
-    void Update()
+    
+    public void Register()
     {
+        authPanel.SetActive(false);
+        registrationPanel.SetActive(true);
         
     }
 }
