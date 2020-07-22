@@ -14,10 +14,17 @@ public class HealthBarScript : MonoBehaviour
         healthSlider.value = 1;
         healthSlider.fillRect.GetComponent<Image>().color = Color.green;
         StartCoroutine(HealthObject());
+        
     }
 
     IEnumerator HealthObject()
     {
+        if (RelieveMeasures.reliefOn)
+        {
+            yield return new WaitForSeconds(30);
+            RelieveMeasures.reliefOn = false;
+        }
+        
         while (healthSlider.value > 0)
         {
             if (healthSlider.value < 0.35f)
@@ -28,7 +35,7 @@ public class HealthBarScript : MonoBehaviour
             {
                 healthSlider.fillRect.GetComponent<Image>().color = Color.yellow;
             }
-            healthSlider.value -= (APICallerScript.AQIndex-0.15f) * 0.1f;
+            healthSlider.value -= (APICallerScript.AQIndex-0.20f) * 0.1f;
             
             yield return new WaitForSeconds(1);
         }

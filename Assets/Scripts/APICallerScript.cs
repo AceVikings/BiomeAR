@@ -19,7 +19,7 @@ public class APICallerScript : MonoBehaviour
 
     public Slider aqiSlider;
     public static float AQIndex;
-    public Text text;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -89,9 +89,5 @@ public class APICallerScript : MonoBehaviour
         
     
     }
-
-    private void Update()
-    {
-        text.text = Input.touchCount.ToString();
-    }
+    
 }

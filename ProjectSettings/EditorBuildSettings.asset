@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameScene.unity
     guid: ddf47644242e8324c94a9c0e60c4331d
+  - enabled: 1
+    path: Assets/Scenes/MartScene.unity
+    guid: 240a4f7382774a9499e8d2325e8a78de
   m_configObjects: {}
