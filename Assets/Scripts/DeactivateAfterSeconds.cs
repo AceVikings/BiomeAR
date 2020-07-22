@@ -14,5 +14,9 @@ public class DeactivateAfterSeconds : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
-    
+
+    public void GoToWiki()
+    {
+        Application.OpenURL("https://en.wikipedia.org/wiki/Air_quality_index");
+    }
 }
