@@ -50,11 +50,13 @@ public class ObjectSelection : MonoBehaviour
 
     public void ShowOutline(Transform selection)
     {
-        selection.GetComponent<MeshRenderer>().material.SetFloat("_Outline",1f);
+        selection.GetComponent<MeshRenderer>().material.SetFloat("_Outline",0.033f);
+        selection.GetComponent<Selected>().isSelected = true;
     }
     public void HideOutline(Transform selection)
     {
         selection.GetComponent<MeshRenderer>().material.SetFloat("_Outline",0f);
+        selection.GetComponent<Selected>().isSelected = false;
     }
         
 }

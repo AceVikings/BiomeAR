@@ -15,7 +15,7 @@ public class MoveObject : MonoBehaviour
         {    
             touch = Input.GetTouch(0);
             Debug.Log("NO");
-            if (touch.phase == TouchPhase.Moved)
+            if (touch.phase == TouchPhase.Moved && transform.GetComponent<Selected>().isSelected)
             {
                 transform.position = new Vector3(
                     transform.position.x + touch.deltaPosition.x*speedModifier,

@@ -8,6 +8,7 @@ public class InstantiateGroundProps : MonoBehaviour
     {
         GameObject newObject = Instantiate(name, Vector3.zero, Quaternion.identity, transform);
         newObject.AddComponent<MoveObject>();
+        newObject.AddComponent<Selected>();
     }
     
 }
