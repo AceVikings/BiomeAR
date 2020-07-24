@@ -7,9 +7,9 @@ using UnityEngine.UI;
 public class MarketPlaceController : MonoBehaviour
 {
     [SerializeField] private Text coins;
-    [SerializeField] private Text purchase;
-
-    public GameObject collectible;
+    [SerializeField] private Text goodiecoin;
+    private int coint = 500;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -22,12 +22,17 @@ public class MarketPlaceController : MonoBehaviour
         
     }
 
-    public void buyCollectible(GameObject name)
+    public void buyGoodie()
     {
-        new NotImplementedException();
+        coint -= 50;
+        coins.text = coint.ToString();
+        goodiecoin.text = coint.ToString();
     }
     public void buyRelief()
     {
+        coint -= 100;
+        coins.text = coint.ToString();
+        goodiecoin.text = coint.ToString();
         RelieveMeasures.reliefOn = true;
     }
     

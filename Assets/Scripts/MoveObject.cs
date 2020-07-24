@@ -8,11 +8,16 @@ public class MoveObject : MonoBehaviour
 {
     private Touch touch;
     private float speedModifier = 0.01f;
-    
 
-    private void Update()
+    private void Start()
     {
         
+    }
+
+    
+    private void Update()
+    {
+        Debug.Log(transform.position);
         if (Input.touchCount > 0)
         {   
             
